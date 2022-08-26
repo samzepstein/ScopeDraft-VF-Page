@@ -1,0 +1,2116 @@
+<apex:page standardcontroller="Scope_Draft__c" renderAs="pdf" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+<html>  
+<head>
+    <style>
+    body { font-family: 'Arial Unicode MS'; font-size: 12px; }
+            .header { font: bold 30px; color: red; border-bottom: 2px solid #2280C0; padding-left: 3px; margin-top: 5px; } 
+       </style>
+    </head>        
+
+    <div style="width:100%; font-size: 30px; text-align: left; font-weight: bold; border-bottom: 5px solid #3A95D3;">
+         <apex:image style="border:;" url="https://flexe--dev7--c.cs68.visual.force.com/resource/1519584819000/FlexeLogoBlue?isdtp=p1" width="125" height="50"/>
+        </div>
+
+        
+               <br/>
+    <div style="width: 100%; display: inline;">           
+    <div style="width: 95%; float: right;  padding-bottom: 5px;">
+       <div style=" font-size: 24px; border-bottom: 1px solid black;">
+        Project Overview 
+            </div>
+       <br/>
+       <div style="width: 100%; font-size: 18px; color: #3A95D3; padding: 3px;">
+           Project
+           </div>
+       <div style="width: 100%; font-size: 14px; color: black;">
+            <ul style="list-style-type: none;">
+               <li>
+                   Project ID: {!Scope_Draft__c.Scope_Project_Number__c}
+                   </li>
+               <li>
+                   Location:
+                   </li>    
+             
+               </ul>
+           </div>
+        
+       <br/>
+       <div style="width: 100%; font-size: 18px; color: #3A95D3; padding: 3px;">
+           Summary
+           </div>
+       <div style="width: 100%; font-size: 14px; color: black;">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Scope_Draft__c.Project_Overview__c}
+           </div>   
+       <br/>
+   <!--    <div style="width: 100%; font-size: 18px; color: #3A95D3; padding: 3px;">
+           Timing
+           </div>
+       <div style="width: 100%; font-size: 14px; color: black;">
+           <ul style="list-style-type: none;">
+               <li>
+                   Response Due Date: 
+                   </li>
+               <li>
+                   Client Decision Date: 
+                   </li>
+               <li>
+                   Project Start Date: 
+                   </li>
+               <li>
+                   First Inbound Date: 
+                   </li>
+               <li>
+                   First Outbound Date: 
+                   </li>     
+               <li>
+                   Project End Date: 
+                   </li>  
+                   </ul>             
+           </div>       -->
+       <div style="width: 100%; font-size: 18px; color: #3A95D3; padding: 3px;">
+           General Goods Description
+           </div>
+       <div style="width: 100%; font-size: 14px; color: black;">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Scope_Draft__c.Scope_Goods_Description__c}
+           </div>   
+           
+    <!--  <br/>
+       <div style="width: 100%; font-size: 18px; color: #3A95D3; padding: 3px;">
+           FLEXE Contacts
+           </div>
+       <div style="width: 100%; font-size: 14px; color: black;">
+           <ul style="list-style-type: none;">
+               <li>
+                   Market Development Representative: 
+                   </li>
+               <li>
+                   Business Development Representative: 
+                   </li>
+                   </ul>             
+           </div>  -->     
+        </div>
+     
+                 
+          
+           
+    </div>
+
+
+<!-- START Scope Doc -->
+<div>  
+
+    <div style="margin-top: 900px;">
+        <div style="width: 20%; float: right; text-align: right;">
+                <apex:image style="border:;" url="https://flexe--dev7--c.cs68.visual.force.com/resource/1519584819000/FlexeLogoBlue?isdtp=p1" width="80" height="35"/>
+            </div>
+        </div>
+    <div style="width:100%; margin: 2px; margin-top: 40px; padding: 1px; font-size: 24px; border-bottom: 2px solid black;">
+        FLEXE, Inc.
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 18px;">
+        Project Scope Document
+        </div>    
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 14px;">
+        Scope: {!Scope_Draft__c.Name}
+        </div>    
+        
+               <br/>
+                 
+    <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Project Details
+            </div>
+        <table style="width: 100%; margin-top: 2px;">                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    General Commodity
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Scope_Goods_Description__c}
+                    </td>
+                </tr>      
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Project Overview
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Project_Overview__c}
+                    </td>
+                </tr>    
+                </table>        
+            
+       </div>  
+          
+       
+  <!--- END REPEAT --->     
+       <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Facility &amp; Inventory Details
+            </div>
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Facility Requirements
+                    </th>
+                </tr>    
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Is HazMat storage required?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Hazmat__c}
+                    </td>
+                </tr>
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Facility Requirements
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Facility_Reqirements__c}
+                    </td>
+                </tr>  
+             <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Storage Requirements
+                    </th>
+                </tr>    
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Average pallets on-hand storage qty
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Average_on_Hand_UoM__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Max pallets on-hand storage qty
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Max_on_Hand_UoM__c}
+                    </td>
+                </tr>               
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Do you need visibility to quantity of cartons per pallet?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Visibility_to_Quantity__c}
+                    </td>
+                </tr>
+                
+                
+           <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Inventory Properties
+                    </th>
+                </tr>    
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                     Number of SKUs in Inventory
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.SKUs_in_Inventory__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                      Stock Rotation Req.
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Stock_Rotation_Requirements__c}
+                    </td>
+                </tr>               
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                        Notes on Stock Rotation:
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Stock_Rotation_Requirements_Notes__c}
+                    </td>
+                </tr>     
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                       Inventory Tracking Method
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Inventory_Tracking_Method__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                        Annual Inventory Turns
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Annual_Inventory_Turns__c}
+                    </td>
+                </tr>               
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                          Can pallets be moved with standard forklifts?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Can_Pallets_Be_Moved_with_Forklifts__c}
+                    </td>
+                </tr>
+                
+                
+           <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Pallet Characteristics
+                    </th>
+                </tr>    
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                       Average Pallet Dimensions LxWxH (inches)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Average_Pallet_Dimensions__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                        Average Pallet Weight (lbs)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Average_Pallet_Weight__c} lbs.
+                    </td>
+                </tr>               
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                         Max Pallet Dimensions LxWxH (inches)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Max_Pallet_Dimensions__c}
+                    </td>
+                </tr>     
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                       Max Pallet Weight (lbs)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Max_Pallet_Weight__c} lbs.
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                       Pallet Storage Stackability
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Stackable__c}
+                    </td>
+                </tr>               
+                
+           <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Carton Characteristics (if carton handling is required)
+                    </th>
+                </tr>    
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                         Average Carton Dimensions (inches)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Average_Carton_Dimensions__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                          Average Carton Weight (lbs)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Average_Carton_Weight__c} lbs.
+                    </td>
+                </tr>               
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                           Max Carton Dimensions (inches)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Max_Carton_Dimensions__c}
+                    </td>
+                </tr>     
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                         Max Carton Weight (lbs)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Max_Carton_Weight__c}
+                    </td>
+                </tr>
+            
+                </table>        
+            
+       </div>
+                    
+ <!-- This is a Repeated section for Inbound Modes, Child to Scope Draft -->               
+        <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Inbound
+            </div>
+<apex:repeat value="{!Scope_Draft__c.Inbound_Modes__r}" var="ib">            
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Mode (RepeatID)
+                    </th>
+                </tr>
+            <tr>
+                <td colspan="2" style="border: 1px solid #f2f2f2;; padding: 2px;">
+                    {!ib.Description__c}
+                    </td>
+                </tr>         
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    What UOM is being unloaded
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.What_UOM_is_being_unloaded__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Avg. UOM per Shipment
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Avg_UOM_Per_Shipment__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Avg. SKUs per Shipment
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Avg_SKUs_Per_Shipment__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Avg. Cartons per Pallet if Container
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Avg_Cartons_Per_Pallet_container__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    % of Inbound Items with a Barcode
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.of_inbound_items_with_barcode__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Inventory Build Period (Weeks)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Inventory_Build_Period_Weeks__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Inventory Build Volume (TLs)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Inventory_Build_Volume_TLs__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Avg Shipments per Week (after Inventory Build)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Avg_Shipments_per_Week__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Are there any mixed-SKU Pallets?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Are_there_mixed_SKU_Pallets__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Are you able to apply a FLEXE pallet ID tag to each pallet before it ships from your facility?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Are_you_able_to_apply_a_FLEXE_pallet_ID__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Do you require capturing serial/lot/expiration codes?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Do_you_require_capturing_serial_lot_exp__c}
+                    </td>
+                </tr>
+             <tr style="">
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Can you provide a photo os the serial/lot/expiration code we need to capture?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Can_provide_serial_lot_exp_code_image__c}
+                    </td>
+                </tr> 
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Other Notes or Comments Regarding the Inbound Process:  
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ib.Other_Inbound_Notes__c}
+                    </td>
+                </tr> 
+             </table>                     
+</apex:repeat>       
+
+        </div>
+ <!-- This is a Repeated section for Outbound Modes, Child to Scope Draft -->               
+
+        <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Outbound
+            </div>
+<apex:repeat value="{!Scope_Draft__c.Outbound_Modes__r}" var="ob">           
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                    Mode (RepeatID)
+                    </th>
+                </tr>
+            <tr>
+                <td colspan="2" style="border: 1px solid #f2f2f2;; padding: 2px;">
+                    {!ob.Description__c}
+                    </td>
+                </tr>         
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Volume (Shipments per Week)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Volume_Shipments_per_week__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Average Pallets per Order
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Average_Pallets_Per_Order__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    % of Orders requiring case picking
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.of_Orders_require_Case_Pick__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Is there a day/week/month that order volume will spike?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Day_week_month_order_volume_spike__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    What shipping carriers do you use?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Shipping_Carriers__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    If LTL who will schedule the transportation, you or the warehouse?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.If_LTL_who_will_schedule_transportation__c}
+                    </td>
+                </tr>
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    If LTL will you provide a BOL?
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.If_LTL_will_you_provide_a_BOL__c}
+                    </td>
+                </tr>
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Shipping SLA Expectation
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Shipping_SLA_Expectation__c}
+                    </td>
+                </tr>
+              
+             <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Other Notes or Comments Regarding the Inbound Process:  
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!ob.Other_Notes_or_Comments__c}
+                    </td>
+                </tr> 
+             </table>                     
+</apex:repeat>                
+        </div>     
+
+        <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;'">
+            IT Systems/Integration Details
+            </div>
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th style="border-bottom: 1px solid #f2f2f2;">
+                    Please describe your preferred method of communicating with the FLEXE platform     
+                    </th>
+                    </tr>
+                <tr>    
+                <td style="border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Describe_preferred_method_of_comm__c}
+                    </td>
+                </tr>
+                </table>
+                
+        </div>        
+<br/>
+         <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Estimated Volume Summary
+            </div>
+        <div style="">
+            This section shows the estimated volume for the first year. If a project lasts less than 12 months it reflects the entire project volume. This is only a projection and not a guarantee of the project throughput.                  
+           </div>
+        <div>
+            <table style="width: 60%; margin: 0 auto; margin-top: 5px;">
+                <tr>
+                    <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                        INBOUND
+                        </th>
+                        </tr>
+                <tr>
+                    <th style="width: 60%;">
+                        Single-SKU Pallets Received
+                          </th>
+                          
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Single_SKU_Pallets_Rec__c}
+                        </td>
+                        </tr>
+                <tr>
+                    <th style="width: 60%;">
+                        Single-SKU Cartons on a Mixed-SKU Pallet Received
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Single_SKU_Cartons_Mix_SKU_Pallet__c}
+                        </td>
+                        </tr> 
+                 <tr>
+                    <th style="width: 60%;">
+                        Single-SKU Floor Loaded Cartons Received
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Single_SKU_Floor_Loaded_Cartons_Rec__c}
+                        </td>
+                        </tr>
+                <tr>
+                    <th style="width: 60%;">
+                        Full Containers Received
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Full_Containers_Received__c}
+                        </td>
+                        </tr>                 
+                <tr>
+                    <th colspan="2">
+                        &nbsp;
+                        </th>
+                        </tr>
+                <tr>
+                    <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                        STORAGE
+                        </th>
+                        </tr>
+                <tr>
+                    <th style="width: 60%;">
+                        Single-SKU Pallets Received
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Single_SKU_Pallets_Rec__c}
+                        </td>
+                        </tr> 
+                        
+                 <tr>
+                    <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                        OUTBOUND
+                        </th>
+                        </tr>
+                <tr>
+                    <th style="width: 60%;">
+                       Pallets Shipped Outbound
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Pallets_Shipped_Outbound__c}
+                        </td>
+                        </tr>   
+                <tr>
+                    <th style="width: 60%;">
+                       Pallet Materials
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!Scope_Draft__c.EVS_Pallet_Materials__c}
+                        </td>
+                        </tr>                             
+                <tr>
+                    <th colspan="2" style="background-color: #f6f6f6; padding: 3px;">
+                        MISCELLANEOUS FEES
+                        </th>
+                        </tr>
+       <apex:repeat value="{!Scope_Draft__c.Miscellaneous_Volumes_Fees__r}" var="msc">    
+                <tr>
+                    <th style="width: 60%;">
+                       {!msc.Name}
+                          </th>
+                    <td style="width: 40%; text-align: center;">
+                        {!msc.Estimated_Annual_Volume__c}
+                        </td>
+                        </tr>          
+                </apex:repeat>        
+                        </table>
+                        </div>
+                        </div>
+
+
+
+
+<!--</apex:repeat>   -->  
+
+<div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Sites
+            </div>
+<div style="width: 60%; margin: 0 auto;"> 
+<apex:repeat value="{!Scope_Draft__c.Scope_Opportunity_Relationship__r}" var="sor">          
+<br/>
+       <div style="border: 1px solid #f2f2f2;">
+           <div style="background-color: #f2f2f2; padding: 3px; font-size: 14px;">
+               Proj Id: {!sor.Project_Id__c}
+               </div>
+       <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Location
+            </div>
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Desired Location
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Desired_Location__c}
+                    </td>
+                </tr>
+           <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Radius Tolerance
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Radius_Tolerance__c}
+                    </td>
+                </tr>     
+                </table>
+                </div>
+       
+       
+       <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 14px;">
+            Timing
+            </div>
+        <table style="width: 100%; margin-top: 2px;">
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Response Due Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Response_Due_Date__c}
+                    </td>
+                </tr>
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Client Decision Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Decision_Date__c}
+                    </td>
+                </tr>  
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Estimated First Inbound Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Est_First_Inbound_Date__c}
+                    </td>
+                </tr>      
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Estimated First Outbound Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Est_First_Outbound_Date__c}
+                    </td>
+                </tr>  
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Project Duration (Temporary or Ongoing)
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Project_Duration__c}
+                    </td>
+                </tr> 
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Estimated Start Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Est_Start_Date__c}
+                    </td>
+                </tr>  
+                
+            <tr>
+                <th style="width: 40%; border-bottom: 1px solid #f2f2f2;">
+                    Estimated End Date
+                    </th>
+                <td style="width: 60%; border-bottom: 1px solid #f2f2f2;">
+                    {!sor.Est_End_Date__c}
+                    </td>
+                </tr>            
+                </table>        
+            
+       </div> 
+       </div>
+       </apex:repeat>
+       </div>
+     </div>
+     </div>
+<!-- END Scope Doc -->
+
+<!-- START Pricing Levers -->
+<div style="page-break-after: always;"> 
+
+    <div>
+        <div style="width: 20%; float: right; text-align: right;">
+                <apex:image style="border:;" url="https://flexe--dev7--c.cs68.visual.force.com/resource/1519584819000/FlexeLogoBlue?isdtp=p1" width="80" height="35"/>
+            </div>
+        </div>
+    <div style="width:100%; margin: 2px; margin-top: 40px; padding: 1px; font-size: 24px; border-bottom: 2px solid black;">
+        FLEXE, Inc.
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 18px;">
+        Project Pricing Levers
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 14px;">
+        Scope: {!Scope_Draft__c.Name}
+        </div>
+        
+                    
+               <br/>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 18px;">
+        {!Scope_Draft__c.Pricing_Configuration__r.Name}
+            </div>           
+    <div style="width:95%; margin: 0 auto;">
+        <table style="width: 100%;">
+            <tr style="background-color: #f2f2f2;">
+                <th style="width: 30%; padding: 3px;">
+                    Pricing Lever
+                    </th>
+                <th style="width: 60%; padding: 3px;">
+                    Description
+                    </th>
+                <th style="width: 10%; padding: 3px; text-align: center;">
+                    In Use
+                    </th>
+                </tr>
+     <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever1Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever1Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever1_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_1__c}"/>
+                    </td>
+                </tr>  
+                
+             </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever2Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever2Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever2_Descr__c}
+                    </td>
+               <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_2__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever3Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever3Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever3_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_3__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever4Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever4Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever4_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_4__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel>                   
+        
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever5Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever5Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever5_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_5__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever6Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever6Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever6_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_6__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever7Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever7Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever7_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_7__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever8Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever8Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever8_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_8__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+         
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever9Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever9Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever9_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_9__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever10Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever10Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever10_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_10__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever11Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever11Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever11_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_11__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever12Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever12Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever12_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_12__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel>  
+         <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever13Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                   {!Scope_Draft__c.Pricing_Configuration__r.Lever13Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever13_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_13__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever14Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever14Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever14_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_14__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever15Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever15Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever15_Descr__c}
+                    </td>
+               <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_15__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever16Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever16Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever16_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_16__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+        
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever17Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                   {!Scope_Draft__c.Pricing_Configuration__r.Lever17Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever17_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_17__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever18Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever18Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever18_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_18__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever19Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever19Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever19_Descr__c}
+                    </td>
+               <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_19__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever20Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever20Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever20_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_20__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+         
+         <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever21Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever21Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever21_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_21__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever22Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever22Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever22_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_22__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+       
+       <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever23Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever23Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever23_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_23__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever24Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever24Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever24_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_24__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel> 
+                
+        <apex:outputpanel rendered="{!Scope_Draft__c.Pricing_Configuration__r.Lever25Name__c != null}">
+            <tr>
+                <th style="width: 30%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever25Name__c}
+                    </th>
+                <td style="width: 60%; padding: 3px; border-bottom: 1px solid #f2f2f2;">
+                    {!Scope_Draft__c.Pricing_Configuration__r.Lever25_Descr__c}
+                    </td>
+                <td style="width: 10%; padding: 3px; border-bottom: 1px solid #f2f2f2; text-align: center;">
+                    <apex:outputfield value="{!Scope_Draft__c.Show_Field_25__c}"/>
+                    </td>
+                </tr>  
+                
+                </apex:outputpanel>        
+                                      
+            </table>
+            
+            </div>
+</div>
+<!-- END Pricing Levers -->
+
+<!-- START Facility Requirements -->
+<div style="page-break-after: auto;"> 
+
+    <div>
+        <div style="width: 20%; float: right; text-align: right;">
+                <apex:image style="border:;" url="https://flexe--dev7--c.cs68.visual.force.com/resource/1519584819000/FlexeLogoBlue?isdtp=p1" width="80" height="35"/>
+            </div>
+        </div>
+    <div style="width:100%; margin: 2px; margin-top: 40px; padding: 1px; font-size: 24px; border-bottom: 2px solid black;">
+        FLEXE, Inc.
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 18px;">
+        Facility Requirements
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 14px;">
+       Scope: {!Scope_Draft__c.Name}
+        </div>
+ 
+ <br/>
+ 
+     <table style="width: 95%; margin: 0 auto; padding: 3px;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Required Certification
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Alcohol (Licensed)
+                 </td>
+             
+          <td style="width: 20%; text-align: center;">
+                
+                     {!Scope_Draft__c.Req_Alcohol_Licensed__c}
+                     </td>
+       <!--     <apex:outputpanel rendered="{!Scope_Draft__c.Req_Alcohol_Licensed__c = 'Hard Requirement'}">
+                 <td style="width: 20%; text-align: center; color: red;">
+                
+                     {!Scope_Draft__c.Req_Alcohol_Licensed__c}
+                     </td> 
+                 </apex:outputpanel>
+             <apex:outputpanel rendered="{!Scope_Draft__c.Req_Alcohol_Licensed__c = 'Strong Preference'}">
+                 <td style="width: 20%; text-align: center; color: yellow;">
+               
+                     {!Scope_Draft__c.Req_Alcohol_Licensed__c}
+                     </td> 
+                 </apex:outputpanel>    
+             <apex:outputpanel rendered="{!Scope_Draft__c.Req_Alcohol_Licensed__c = 'Not Required'}">
+                 <td style="width: 20%; text-align: center; color: black;">
+           
+                     {!Scope_Draft__c.Req_Alcohol_Licensed__c}
+                     </td> 
+                 </apex:outputpanel>    -->
+                 
+                 
+                      
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Bonded
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Bonded__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 C-TPAT Member
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_C_TPAT_Member__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Hazmat
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Hazmat__c}
+                     </td>
+                     
+             </tr>            
+            
+         </table>       
+         
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Food Related Certificates
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Food Grade
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Food_Grade__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 FDA
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_FDA__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 AIB
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_AIB__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 GFSI
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_GFSI__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 SQF
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_SQF__c}
+                     </td>
+                     
+             </tr>               
+         <tr>
+             <td style="width: 80%;">
+                 HAACP
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_HAACP__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 SCHCI (TEXAS)
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_SCHCI_Texas__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 GMP
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_GMP__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 Organic
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Organic__c}
+                     </td>
+                     
+             </tr>               
+         <tr>
+             <td style="width: 80%;">
+                 BRC Storage &amp; Distribution Certification
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_BRC_Storage_Distribution_Cert__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Pest Control Program
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Pest_Control_Program__c}
+                     </td>
+                     
+             </tr>           
+         </table>  
+         
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Additional Storage Method 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Aerosol Storage
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Aerosol_Storage__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Caged Storage area
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Caged_Storage_Area__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Frozen
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Frozen__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Outdoor Pallet Storage 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Outdoor_Pallet_Storage__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 Refrigerated Storage
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Refrigerated_Storage__c}
+                     </td>
+                     
+             </tr>               
+         <tr>
+             <td style="width: 80%;">
+                 Temperature Controlled
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Temperature_Controlled__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Trailer Storage/ Yard
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Trailer_Storage_Yard__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Vault Storage
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Vault_Storage__c}
+                     </td>
+                     
+             </tr> 
+         
+                    
+         </table>                                    
+
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Security Requirements 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 24/7 Security Guard
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_24_7_Security_Guard__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Fenced Yard
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Fenced_Yard__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Guard Shack 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Guard_Shack__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Inside Security Cameras
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Interior_Security_Cameras__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 Outside Security Cameras
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Exterior_Security_Cameras__c}
+                     </td>
+                     
+             </tr>                        
+                    
+         </table>                      
+        
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Transportation In/ Outbound Access 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Drive-in Doors
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Drive_In_Doors__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 E. Van Access
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_E_Van_Access__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Intermodal/rail/box car
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Intermodal_Rail_Box_Car__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Transportation Services 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Transportation_Services__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 Port Services
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Port_Services__c}
+                     </td>
+                     
+             </tr>               
+         <tr>
+             <td style="width: 80%;">
+                 Dock Levelers
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Dock_Levelers__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Dock Door Seals
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Dock_Door_Seals__c}
+                     </td>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Seals
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Seals__c}
+                     </td>
+                     
+             </tr> 
+         <tr>
+             <td style="width: 80%;">
+                 Will Call Counter
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Will_Call_Counter__c}
+                     </td>
+                     
+             </tr> 
+                    
+         </table> 
+         
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Storage Rack Requirements 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Standard Selective Rack
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Standard_Selective_Rack__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Cantilever Rack
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Cantilever_Rack__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Individual Carton Storage Rack
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Ind_Carton_Storage_Rack__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Bin Shelving for Small Parts 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Bin_Shelving_for_Small_Parts__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 ESFR Sprinklers
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_ESFR_Sprinklers__c}
+                     </td>
+                     
+             </tr>               
+         <tr>
+             <td style="width: 80%;">
+                 In Rack Fire Suppression
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_In_Rack_Fire_Suppression__c}
+                     </td>
+                     
+             </tr>
+                    
+         </table>                  
+
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Labor 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 2 Shifts
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_2_Shifts__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 3 Shifts
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_3_Shifts__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Full-Time
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Full_Time__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Weekends 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Weekends__c}
+                     </td>
+                     
+             </tr> 
+         
+         </table>
+         
+<br/>
+ 
+     <table style="width: 95%; margin: 0 auto;">
+         <tr style="background-color: #f2f2f2;">
+             <th style="width: 80%;">
+                 Services 
+                 </th>
+             
+             <th style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     Requirement
+                     </th>
+                     
+             </tr>
+         <tr>
+             <td style="width: 80%;">
+                 Does Warehouse Need to provide a system to track the location of the pallets?
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Pallet_Location_Tracking_Serv__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Is WiFi needed to support this project?
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_WiFi__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                Amazon FBA Experience
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Amazon_FBA_Experience__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Experience picking eaches for ecommerce orders? 
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Picking_Eaches_ecomm__c}
+                     </td>
+                     
+             </tr> 
+         
+         <tr>
+             <td style="width: 80%;">
+                 Seller Fulfilled Prime
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Seller_Fulfilled_Prime__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Apparel
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Apparel__c}
+                     </td>
+                     
+             </tr>
+         
+         <tr>
+             <td style="width: 80%;">
+                 Reverse logistics (returns/repairs)
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Reverse_Logistics__c}
+                     </td>
+                     
+             </tr>
+             
+         <tr>
+             <td style="width: 80%;">
+                 Retail Compliant labeling experience
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Retail_Compliant_Labeling__c}
+                     </td>
+                     
+             </tr> 
+             
+         <tr>
+             <td style="width: 80%;">
+                 Yard Management System
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Serv_Yard_Management_System__c}
+                     </td>
+                     
+             </tr>
+             
+        <tr>
+             <td style="width: 80%;">
+                 Power at Pack-Station(s)
+                 </td>
+             
+             <td style="width: 20%; text-align: center;">
+                 <!-- Diff Color / Text based on value -->
+                     {!Scope_Draft__c.Req_Power_At_Pack_Station__c}
+                     </td>
+                     
+             </tr>                 
+         
+         </table>              
+</div>         
+<!-- END Facility Requirements -->  
+
+<div style=""> 
+
+    <div>
+        <div style="width: 20%; float: right; text-align: right;">
+                <apex:image style="border:;" url="https://flexe--dev7--c.cs68.visual.force.com/resource/1519584819000/FlexeLogoBlue?isdtp=p1" width="80" height="35"/>
+            </div>
+        </div>
+    <div style="width:100%; margin: 2px; margin-top: 40px; padding: 1px; font-size: 24px; border-bottom: 2px solid black;">
+        FLEXE, Inc.
+        </div>
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 18px;">
+        Scope Revisions
+        </div>    
+    <div style="width:100%; margin: 2px; padding: 1px; font-size: 14px;">
+        Scope: {!Scope_Draft__c.Name}
+        </div>    
+        
+               <br/>
+                 
+    <div styleclass="header" style="margin-top: 10px;">
+        <div style="border-bottom: 2px solid #2280C0; width: 100%; font-size: 16px;">
+            Revisions Log
+            </div>
+        <table style="width: 100%; margin-top: 2px;">                
+            <tr>
+                <th style="width: 20%; border-bottom: 1px solid #f2f2f2; text-align: center; font-size:14px;">
+                    Change Date
+                    </th>
+                <th style="width: 80%; border-bottom: 1px solid #f2f2f2; text-align: center; font-size:14px;">
+                    Revision(s)
+                    </th>
+                </tr>      
+           
+           <apex:repeat value="{!Scope_Draft__c.Scope_Revisions__r}" var="r">     
+            <tr>
+                <th style="border-bottom: 1px solid #f1f0f0; text-align: center;">
+                    <apex:outputText value="{0, date, MMMM d','  yyyy}">
+    <apex:param value="{!r.Date_of_Change__c}" /> 
+</apex:outputText>
+                    </th>
+                <td style="border-bottom: 1px solid #f1f0f0;">
+                    {!r.Revision_Description__c}
+                    </td>
+                </tr>   
+                </apex:repeat> 
+                </table>        
+            
+       </div>  
+          </div>
+</html>
+</apex:page>
